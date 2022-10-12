@@ -12,11 +12,14 @@ import "./styles/_styles.scss";
 // v6에서는 component={Home}으로 쓰던게 element={<Home />}로 변경되었습니다.
 // Routes를 사용하는 이유는 한번에 하나의 Route만 렌더링 하기 위해서이다.
 function App() {
+  const url = process.env.PUBLIC_URL;
+
+  console.log(url);
   return (
   <Router>
     <Routes>
-      <Route path="/movie/:id" element={<Detail />} />
-      <Route path="/" element={<Home />} />
+      <Route path={`${process.env.PUBLIC_URL}/movie/:id`} element={<Detail />} />
+      <Route path={`${process.env.PUBLIC_URL}/`} element={<Home />} />
     </Routes>
   </Router>
   );
