@@ -14,12 +14,11 @@ import "./styles/_styles.scss";
 function App() {
   const url = process.env.PUBLIC_URL;
 
-  console.log(url);
   return (
-  <Router>
+  <Router basename={url}>
     <Routes>
       <Route path={`/movie/:id`} element={<Detail />} />
-      <Route path={`${process.env.PUBLIC_URL}/`} element={<Home />} />
+      <Route path={`/`} element={<Home />} />
     </Routes>
   </Router>
   );
