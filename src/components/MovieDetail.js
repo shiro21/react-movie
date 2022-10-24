@@ -1,16 +1,20 @@
 import style from "../styles/Detail.module.scss";
 import PropsTypes from "prop-types";
+import { useNavigate } from 'react-router-dom';
+import React from 'react';
 
-const onClick = () => {
-    console.log('뒤;로가기');
-}
 
 const MovieDetail = ({ id, date, background, count, title, genres, decription }) => {
-
+    const navigate = useNavigate();
+    const onClick = () => {
+        console.log(navigate(-1));
+    }
     return (
         <article className={style.movie_contents}>
-            <button onClick={onClick}>닫기</button>
-            <h1>{title} <span>ID Number: {id}</span></h1>
+            <h1>
+                {title} <span>ID Number: {id}</span>
+                <button className={style.colse} onClick={onClick}>닫기</button>
+            </h1>
 
             <div className={style.movie_item}>
                 {/* url로 사용하는 방법 */}
@@ -47,7 +51,7 @@ const MovieDetail = ({ id, date, background, count, title, genres, decription })
     );
 };
 
-MovieDetail.PropsTypes = {
+MovieDetail.propsTypes = {
     id: PropsTypes.number.isRequired,
     date: PropsTypes.string.isRequired,
     background: PropsTypes.string.isRequired,

@@ -1,14 +1,24 @@
 .movie_contents {
+    position: relative;
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
     margin-top: 3rem;
     > h1 {
+        position: relative;
         font-size: 3rem;
+        padding: 0 1rem;
         border-bottom: 1px solid #DDD;
         margin-bottom: 2rem;
         > span {
             font-size: .8rem;
+        }
+        .colse {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            font-size: .8rem;
+            font-weight: 700;
         }
     }
 
